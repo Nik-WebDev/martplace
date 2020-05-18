@@ -102,7 +102,47 @@
 }
 
 // =============  About  =================
+.about {
+  height: 725px;
+  background: linear-gradient(
+    180deg,
+    rgb(0, 48, 222) 0%,
+    rgb(23, 69, 237) 54%,
+    rgb(46, 90, 251) 100%
+  );
+  text-align: center;
+  color: #ffffff;
+  padding: 180px 0 235px;
+  &__title {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  &__subtitle {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px;
+    margin-bottom: 50px;
+  }
+  &__text {
+    font-size: 20px;
+    margin-bottom: 70px;
+  }
+  &__btns {
+  }
+  &__btn {
+    padding: 23px 40px;
+    border-radius: 37px;
+    margin: 0 15px;
+    transition: color 0.5s, background-color 0.3s;
+    &:hover{
+      background-color: #fff;
+      color: $blue;
+    }
+  }
+}
 
+.btn {
+}
 // ==============================
 // ==============================
 // ==============================
