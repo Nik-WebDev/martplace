@@ -1,17 +1,108 @@
-html {
-  box-sizing: border-box;
+@import "vars";
+@import "global";
+// ==============  Header  ================
+.header {
+  background-color: $grey;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    padding: 25px 0;
+  }
+  &__link {
+    margin-left: auto;
+    font-size: 14px;
+    line-height: 28px;
+    padding: 4px 20px;
+    background-color: $blue;
+    color: #ffffff;
+    border-radius: 23px;
+    margin-right: 50px;
+  }
+  &__icons {
+    max-width: 160px;
+    margin-right: 30px;
+  }
+  &__account {
+    display: flex;
+    align-items: center;
+    &-img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: #7c7979;
+    }
+    &-text {
+      margin-left: 20px;
+    }
+    &-name {
+      color: $dark-grey;
+      line-height: 22px;
+      font-weight: 500;
+    }
+    &-score {
+      color: $blue;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    padding: 17px 0;
+  }
+  &__menu {
+    background-color: #ffffff;
+  }
+}
+.menu {
+  &__list {
+  }
+  &__item {
+    display: inline-block;
+    & + li {
+      margin-left: 30px;
+    }
+  }
+  &__link {
+    font-size: 15px;
+    line-height: 42px;
+    text-transform: uppercase;
+    color: $dark-grey;
+    font-weight: 500;
+  }
 }
 
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  -ms-box-sizing: inherit;
-  box-sizing: inherit;
+.header__search {
+  max-width: 360px;
+  width: 100%;
+  position: relative;
+  input {
+    display: block;
+    width: 100%;
+    border: 1px solid #898f96;
+    height: 46px;
+    outline: none;
+    padding: 17px 0 17px 25px;
+    border-radius: 23px;
+    &::placeholder {
+      color: #898f96;
+    }
+  }
+  &-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: $blue;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 26px;
+  }
 }
 
-// ==============================
+// =============  About  =================
+
 // ==============================
 // ==============================
 // ==============================
