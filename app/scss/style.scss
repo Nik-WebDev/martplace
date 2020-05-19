@@ -1,6 +1,7 @@
 @import "vars";
 @import "global";
-// ==============  Header  ================
+@import "fonts";
+
 .header {
   background-color: $grey;
   &__top {
@@ -24,26 +25,56 @@
     max-width: 160px;
     margin-right: 30px;
   }
+  &__icon {
+    font-size: 20px;
+    color: #7e8fa1;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    &::before {
+      position: absolute;
+      right: -11px;
+      top: -11px;
+      font-size: 14px;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: block;
+      color: #fff;
+    }
+  }
+  &__icon--red::before {
+    content: "25";
+    background-color: #ff6a6c;
+  }
+  &__icon--green::before {
+    content: "6";
+    background-color: #62d03b;
+  }
+  &__icon--blue::before {
+    content: "2";
+    background-color: $blue;
+  }
   &__account {
     display: flex;
     align-items: center;
-    &-img {
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      background-color: #7c7979;
-    }
-    &-text {
-      margin-left: 20px;
-    }
-    &-name {
-      color: $dark-grey;
-      line-height: 22px;
-      font-weight: 500;
-    }
-    &-score {
-      color: $blue;
-    }
+  }
+  &__account-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #7c7979;
+  }
+  &__account-text {
+    margin-left: 20px;
+  }
+  &__account-name {
+    color: $dark-grey;
+    line-height: 22px;
+    font-weight: 500;
+  }
+  &__account-score {
+    color: $blue;
   }
   &__wrapper {
     display: flex;
@@ -55,7 +86,34 @@
   &__menu {
     background-color: #ffffff;
   }
+  &__search {
+    max-width: 360px;
+    width: 100%;
+    position: relative;
+    input {
+      display: block;
+      width: 100%;
+      border: 1px solid $border-color;
+      height: 46px;
+      outline: none;
+      padding: 17px 0 17px 25px;
+      border-radius: 23px;
+      &::placeholder {
+        color: $border-color;
+      }
+    }
+  }
+  &__search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: $blue;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 26px;
+  }
 }
+
 .menu {
   &__list {
   }
@@ -74,34 +132,8 @@
   }
 }
 
-.header__search {
-  max-width: 360px;
-  width: 100%;
-  position: relative;
-  input {
-    display: block;
-    width: 100%;
-    border: 1px solid #898f96;
-    height: 46px;
-    outline: none;
-    padding: 17px 0 17px 25px;
-    border-radius: 23px;
-    &::placeholder {
-      color: #898f96;
-    }
-  }
-  &-btn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: $blue;
-    border: none;
-    padding: 13px 25px;
-    border-radius: 26px;
-  }
-}
+// ==============  Header  ================
 
-// =============  About  =================
 .about {
   height: 725px;
   background: linear-gradient(
@@ -130,20 +162,120 @@
   &__btns {
   }
   &__btn {
-    padding: 23px 40px;
+    padding: 18px 40px;
     border-radius: 37px;
     margin: 0 15px;
     transition: color 0.5s, background-color 0.3s;
-    &:hover{
+    &:hover {
       background-color: #fff;
       color: $blue;
     }
   }
 }
 
-.btn {
+// =============  About  =================
+
+.sentence {
+  padding-top: 190px;
+  padding-bottom: 120px;
+  position: relative;
+  &__search {
+    position: absolute;
+    top: -65px;
+    width: 1140px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    z-index: 3;
+    input {
+      max-width: 610px;
+      width: 100%;
+      padding: 18px 25px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      border: 1px solid rgb(220, 220, 220);
+      outline: transparent;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 6px;
+      opacity: 0.3;
+      z-index: -3;
+    }
+    &::after {
+      width: 1080px;
+      top: -20px;
+      right: 30px;
+    }
+    &::before {
+      width: 1110px;
+      top: -10px;
+      right: 15px;
+    }
+  }
+  &__categories {
+    position: relative;
+    max-width: 200px;
+    width: 100%;
+    padding: 18px 25px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: 1px solid rgb(220, 220, 220);
+    margin-left: -1px;
+    margin-right: 30px;
+  }
+  &__categories-arrow {
+    position: absolute;
+    right: 23px;
+    top: 20px;
+    cursor: pointer;
+  }
+  &__search-btn {
+    display: inline-block;
+    padding: 6px 65px;
+    color: #ffffff;
+    background-color: $blue;
+    border-radius: 6px;
+    line-height: 42px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    max-width: 365px;
+    width: 100%;
+    text-align: center;
+    padding: 40px 35px 50px;
+    transition: all 0.5s;
+    &:hover {
+      box-shadow: 0px 2px 50px 0px rgba(0, 0, 0, 0.08);
+    }
+  }
+  &__img {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 35px;
+  }
+  &__title {
+    margin-bottom: 30px;
+    color: #000000;
+    font-size: 24px;
+    line-height: 30px;
+    font-family: "Quicksand", sans-serif;
+  }
+  &__text {
+    line-height: 30px;
+  }
 }
-// ==============================
+// =============  Sentence  =================
+
 // ==============================
 // ==============================
 // ==============================
